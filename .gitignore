@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+*.pyc
+.vite/
+.vitest-cache/
+portfolio/.next/
+portfolio/out/
+portfolio/node_modules/

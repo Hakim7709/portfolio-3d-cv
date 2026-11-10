@@ -28,7 +28,12 @@ KEYWORDS_HOSPITALITY = [
     "qsr",
     "catering",
     "kitchen supervisor",
-    "operations coach"
+    "operations coach",
+    "ordering",
+    "supplier",
+    "inventory",
+    "supply chain",
+    "stock control"
 ]
 
 KEYWORDS_TECH = [
@@ -39,7 +44,10 @@ KEYWORDS_TECH = [
     "it support",
     "systems coordinator",
     "technical support",
-    "automation"
+    "automation",
+    "ai",
+    "generative ai",
+    "prompt engineering"
 ]
 
 def analyze_job_posting(title: str, company: str, location: str, description: str) -> Dict[str, Any]:

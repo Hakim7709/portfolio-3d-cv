@@ -16,6 +16,9 @@ describe('ATS CV Keyword and Content Requirements', () => {
     expect(dataStr).toContain('python');
     expect(dataStr).toContain('next.js');
     expect(dataStr).toContain('+966570457976');
+    expect(dataStr).toContain('supply');
+    expect(dataStr).toContain('ordering');
+    expect(dataStr).toContain('ai');
   });
 
   it('verifies candidate contact numbers and links', () => {

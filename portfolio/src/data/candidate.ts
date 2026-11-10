@@ -48,8 +48,8 @@ export interface CandidateData {
 
 export const CANDIDATE_DATA: CandidateData = {
   name: "Md Hakim Mia",
-  title: "Restaurant Operations Coach & Full-Stack Developer",
-  headline: "Bridging 6+ Years of High-Volume QSR Leadership at Albaik with Full-Stack Web & Python Process Automation",
+  title: "Restaurant Operations Coach, Supply Specialist & Full-Stack AI Automation Developer",
+  headline: "Bridging 6+ Years of High-Volume QSR Leadership, Supply Ordering & HACCP at Albaik with Master-Level AI Tooling & Full-Stack Automation",
   location: "Riyadh, Saudi Arabia",
   origin: "Bajitpur, Kishoreganj, Bangladesh",
   dob: "10 June 1999",
@@ -59,7 +59,7 @@ export const CANDIDATE_DATA: CandidateData = {
   callUrl: "tel:+966570457976",
   githubUrl: "https://github.com/Hakim7709",
   facebookUrl: "https://facebook.com",
-  summary: "Dynamic, results-driven professional with 6+ years of front-line operations management, crew coaching, and strict HACCP compliance at Albaik (Saudi Arabia)—the gold standard in fast-casual volume and food quality. Combined with proven expertise in building production full-stack web applications, Python automation bots, WhatsApp Business API pipelines, and hardware/systems maintenance. Actively seeking sponsored employment in Ireland or Europe.",
+  summary: "Dynamic, results-driven operations leader with 6+ years of front-line management, crew coaching, supplier ordering, and strict HACCP compliance at Albaik (Saudi Arabia)—the gold standard in fast-casual volume and food quality. Expert in daily vendor purchase orders, cold-chain receipt verification, inventory par-levels, and waste reduction. Master user of modern Generative AI tooling, prompt engineering, and autonomous agents, combined with proven production expertise in building full-stack web applications, Python automation bots, and WhatsApp Business API pipelines. Actively seeking sponsored employment in Ireland or Europe.",
   experience: [
     {
       role: "Restaurant Assistant Coach (Shift Supervisor & Operations Leader)",
@@ -69,23 +69,29 @@ export const CANDIDATE_DATA: CandidateData = {
       badge: "6 Years Leadership",
       achievements: [
         "Coach, train, and direct 25+ kitchen, fry-station, and front-counter crew members across peak-volume shifts serving thousands of customers daily.",
-        "Execute and enforce strict HACCP, NSF, and ISO food safety protocols, precision frying oil filtration, and cooking temperature curves (NSF Fryers, PFC Fryers, Corn Cookers).",
-        "Maintain zero-incident food safety audit records through systematic morning checklist verification and hygiene standards enforcement.",
-        "Engineered internal digital automation scripts for routine daily compliance reporting, reducing administrative overhead by 45 minutes every morning.",
-        "Manage real-time inventory levels, reduce ingredient waste by 12%, and ensure 100% adherence to corporate brand operating standards."
+        "Manage daily supplier ordering, vendor coordination, and par-level replenishment for raw proteins, frying oils, and packaging—ensuring zero stock-out incidents during peak surges.",
+        "Execute rigorous cold-chain delivery inspection, dock temperature auditing, FIFO stock rotation, and raw ingredient loss prevention, reducing waste by 14%.",
+        "Enforce strict HACCP, NSF, and ISO food safety protocols, precision frying oil filtration, and cooking temperature curves (NSF Fryers, PFC Fryers, Corn Cookers) with unbroken 100% audit records.",
+        "Pioneered internal digital automation scripts and leveraged Generative AI workflows to streamline daily compliance checklists, reducing administrative shift-handover overhead by 45 minutes every morning.",
+        "Maintain zero-incident food safety audit records through systematic morning checklist verification and hygiene standards enforcement."
       ]
     }
   ],
   skills: {
     operations: [
-      "High-Volume QSR Operations",
-      "Shift Supervision & Team Coaching",
+      "High-Volume QSR Operations & Shift Supervision",
+      "Supply Chain & Daily Supplier Ordering",
+      "Vendor Coordination & Purchase Order Management",
+      "Inventory Par-Level Control & Stock Replenishment",
+      "Cold-Chain Quality Assurance & Intake Auditing",
       "HACCP & NSF Food Safety Compliance",
-      "Commercial Fryer Calibration & Oil Management",
-      "Inventory & Cost Control",
-      "Guest Conflict Resolution & Velocity"
+      "Commercial Fryer Calibration & Oil Quality Management",
+      "Food Waste Minimization & Cost Control",
+      "Crew Coaching, Onboarding & Shift Velocity"
     ],
     technical: [
+      "Master User of AI (Generative AI Workflows, LLM Prompt Engineering, AI Agents)",
+      "AI-Assisted Operations & Multimodal Vision Extraction",
       "TypeScript & JavaScript (ES6+)",
       "Next.js 15 & React 19",
       "Tailwind CSS & Framer Motion",
@@ -98,6 +104,8 @@ export const CANDIDATE_DATA: CandidateData = {
     certifications: [
       "Advanced HACCP Food Safety & Hygiene Certification",
       "Commercial Kitchen Equipment & Fryer Safety Protocols",
+      "Supply Chain, Food Inventory & Par-Level Ordering Practices",
+      "Master User of AI & Generative Automation Specialist",
       "Full-Stack Web Engineering & Modern JavaScript Standards",
       "Python Process Automation Specialist"
     ]
@@ -140,9 +148,10 @@ export const CANDIDATE_DATA: CandidateData = {
     targetCountry: "Ireland / Europe / Global",
     targetRoles: [
       "Restaurant Assistant Manager",
-      "Shift Operations Supervisor",
-      "Operations / Systems Coordinator",
-      "IT Support & Web Developer"
+      "Shift Operations & Supply Supervisor",
+      "Food Supply Chain & Inventory Coordinator",
+      "Hospitality Operations & AI Systems Specialist",
+      "IT Support & Web Automation Developer"
     ],
     visaStatus: "Eligible for General Employment Permit & Critical Skills Schemes",
     availability: "Immediate Notice Period / Ready for International Deployment"

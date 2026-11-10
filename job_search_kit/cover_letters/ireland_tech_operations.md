@@ -12,6 +12,7 @@
 I am writing to apply for the **IT Operations Specialist / Web Developer** role. Bringing a unique blend of 6 years of fast-paced multinational enterprise operations at **Albaik** alongside practical, end-to-end full-stack software development and automation engineering, I thrive at the intersection where code solves real operational bottlenecks.
 
 My technical toolkit spans modern web ecosystems and automation scripts:
+- **Master User of AI & Generative Engineering:** Proficient in prompt engineering, LLM autonomous agents, multimodal OCR extraction, and integrating Generative AI models to automate administrative and software engineering workflows.
 - **Frontend & Web Apps:** Next.js, React, TypeScript, and responsive Tailwind CSS interfaces.
 - **Backend & Scripting:** Python (Playwright for end-to-end portal automation and data scrapers, automated form pipelines), Node.js, and REST APIs.
 - **Messaging & System Automation:** Engineered production WhatsApp Business API webhooks for automated transactional billing and notifications.

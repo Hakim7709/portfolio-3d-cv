@@ -19,8 +19,10 @@ describe('Candidate Data Model Integrity', () => {
 
   it('contains both operations and technical skill suites', () => {
     expect(CANDIDATE_DATA.skills.operations.some(s => s.includes('HACCP'))).toBe(true);
+    expect(CANDIDATE_DATA.skills.operations.some(s => s.toLowerCase().includes('ordering') || s.toLowerCase().includes('supply'))).toBe(true);
     expect(CANDIDATE_DATA.skills.technical.some(s => s.includes('Next.js'))).toBe(true);
     expect(CANDIDATE_DATA.skills.technical.some(s => s.includes('Python'))).toBe(true);
+    expect(CANDIDATE_DATA.skills.technical.some(s => s.toLowerCase().includes('ai'))).toBe(true);
   });
 
   it('lists production projects with metrics', () => {

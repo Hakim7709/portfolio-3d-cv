@@ -14,9 +14,10 @@ I am writing to express my strong enthusiasm for the **Restaurant Assistant Mana
 
 At Albaik, I currently serve as **Restaurant Assistant Coach**, directly supervising cross-functional teams of 25+ kitchen, fry station, and front-counter crew members per shift. My responsibilities require unwavering attention to:
 - **Strict HACCP, NSF & Food Safety Compliance:** Ensuring flawless adherence to oil quality metrics, precision temperature monitoring across commercial fryers (NSF, PFC), and stringent sanitation standards.
+- **Supply Chain, Ordering & Par-Level Replenishment:** Directing daily raw food, protein, and packaging supplier orders, dock receipt cold-chain inspection, and FIFO rotation to eliminate stock-outs and cut waste by 14%.
 - **High-Volume Velocity & Guest Satisfaction:** Maintaining order turnaround times under intense high-traffic volumes without compromising product freshness or customer experience.
 - **Team Development & Morale:** Training new personnel and elevating team performance through coaching and empathetic leadership.
-- **Digital Innovation:** Bridging operations with technology by creating automated daily digital checklist systems that eliminate paperwork bottlenecks and streamline compliance logs.
+- **AI & Digital Process Innovation:** Master user of Generative AI tools and custom automation bots to synthesize shift-handover logs and eliminate paperwork bottlenecks.
 
 Having built a solid, disciplined career in Saudi Arabia, I am now seeking to bring my operational leadership, energy, and work ethic to Ireland's vibrant hospitality sector. I am fully prepared for international relocation and understand the visa sponsorship / employment permit process.
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CANDIDATE_DATA } from '@/data/candidate';
-import { ShieldCheck, Award, Users, Flame, Clock, CheckCircle, ChevronRight } from 'lucide-react';
+import { ShieldCheck, Award, Users, Flame, Clock, CheckCircle, ChevronRight, Boxes, Truck } from 'lucide-react';
 
 export function AlbaikStage() {
   const albaik = CANDIDATE_DATA.experience[0];
@@ -14,37 +14,42 @@ export function AlbaikStage() {
         <div className="mb-12 text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-3">
             <Award className="w-3.5 h-3.5" />
-            Waypoint 2 • Operations Excellence
+            Waypoint 2 • Operations & Supply Chain Excellence
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
             Albaik 6-Year Leadership Arena
           </h2>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl">
-            Managing high-octane operations, crew training, and gold-standard food safety at Saudi Arabia’s premier QSR brand.
+            Managing high-octane operations, daily supplier ordering, cold-chain inventory replenishment, and gold-standard food safety at Saudi Arabia’s premier QSR brand.
           </p>
         </div>
 
         {/* Highlight Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-            <Clock className="w-6 h-6 text-amber-400 mb-2" />
-            <div className="text-3xl sm:text-4xl font-extrabold text-white">6+ Yrs</div>
-            <div className="text-xs text-slate-400 mt-1 font-medium">Continuous Leadership</div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 mb-10">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+            <Clock className="w-5 sm:w-6 h-5 sm:h-6 text-amber-400 mb-2" />
+            <div className="text-2xl sm:text-3xl font-extrabold text-white">6+ Yrs</div>
+            <div className="text-[11px] text-slate-400 mt-1 font-medium">Continuous Leadership</div>
           </div>
-          <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-            <Users className="w-6 h-6 text-cyan-400 mb-2" />
-            <div className="text-3xl sm:text-4xl font-extrabold text-white">25+</div>
-            <div className="text-xs text-slate-400 mt-1 font-medium">Crew Coached / Shift</div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+            <Boxes className="w-5 sm:w-6 h-5 sm:h-6 text-sky-400 mb-2" />
+            <div className="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+            <div className="text-[11px] text-slate-400 mt-1 font-medium">Supplier Order Precision</div>
           </div>
-          <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-            <ShieldCheck className="w-6 h-6 text-emerald-400 mb-2" />
-            <div className="text-3xl sm:text-4xl font-extrabold text-white">100%</div>
-            <div className="text-xs text-slate-400 mt-1 font-medium">HACCP & Hygiene Compliance</div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+            <Users className="w-5 sm:w-6 h-5 sm:h-6 text-cyan-400 mb-2" />
+            <div className="text-2xl sm:text-3xl font-extrabold text-white">25+</div>
+            <div className="text-[11px] text-slate-400 mt-1 font-medium">Crew Coached / Shift</div>
           </div>
-          <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
-            <Flame className="w-6 h-6 text-rose-400 mb-2" />
-            <div className="text-3xl sm:text-4xl font-extrabold text-white">45 Min</div>
-            <div className="text-xs text-slate-400 mt-1 font-medium">Saved via Auto-Checklists</div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+            <ShieldCheck className="w-5 sm:w-6 h-5 sm:h-6 text-emerald-400 mb-2" />
+            <div className="text-2xl sm:text-3xl font-extrabold text-white">Zero</div>
+            <div className="text-[11px] text-slate-400 mt-1 font-medium">HACCP Audit Breaches</div>
+          </div>
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md col-span-2 md:col-span-1">
+            <Flame className="w-5 sm:w-6 h-5 sm:h-6 text-rose-400 mb-2" />
+            <div className="text-2xl sm:text-3xl font-extrabold text-white">45 Min</div>
+            <div className="text-[11px] text-slate-400 mt-1 font-medium">Saved via AI & Auto-Logs</div>
           </div>
         </div>
 

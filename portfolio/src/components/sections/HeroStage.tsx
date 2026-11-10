@@ -70,6 +70,12 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 font-semibold">
               <Award className="w-3.5 h-3.5" /> 6 Years Albaik Coach
             </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-500/10 border border-sky-500/30 text-sky-300 font-semibold">
+              📦 Supplier Ordering & Par-Levels
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 font-semibold">
+              🤖 Master User of AI
+            </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-semibold">
               💻 Full-Stack & Python Automation
             </span>

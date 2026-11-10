@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CANDIDATE_DATA } from '@/data/candidate';
-import { Terminal, Code, Cpu, Database, Wrench, Sparkles, Check } from 'lucide-react';
+import { Terminal, Code, Cpu, Database, Wrench, Sparkles, Check, Bot, Zap } from 'lucide-react';
 
 export function TechLabStage() {
   return (
@@ -12,14 +12,56 @@ export function TechLabStage() {
         <div className="mb-12 text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-3">
             <Terminal className="w-3.5 h-3.5" />
-            Waypoint 3 • Software & Automation Suite
+            Waypoint 3 • AI Mastery & Software Automation Suite
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            IT & Full-Stack Automation Lab
+            AI Engineering & IT Automation Lab
           </h2>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl">
-            Where enterprise operations meets clean code: building automated scrapers, web dashboards, and real-time messaging services.
+            Where enterprise operations meets clean code and Generative AI: engineering autonomous scrapers, web dashboards, and AI-accelerated workflows.
           </p>
+        </div>
+
+        {/* Highlight Feature: Master User of AI Hero Card */}
+        <div className="mb-8 rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-purple-950/60 via-slate-900/90 to-cyan-950/60 border border-purple-500/30 backdrop-blur-xl relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-purple-500/30">
+                <Bot className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-400">
+                  <Sparkles className="w-3 h-3 text-amber-400" /> Core Superpower
+                </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                  Master User of AI & Generative Engineering
+                </h3>
+              </div>
+            </div>
+            <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300">
+              Next-Gen AI Operator
+            </span>
+          </div>
+
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-5 max-w-3xl">
+            Proficient at harnessing state-of-the-art Large Language Models, advanced prompt engineering, and multimodal AI vision to supercharge daily operational productivity, automate document synthesis, generate production code, and design autonomous agentic workflows.
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {[
+              'LLM Prompt Engineering',
+              'Generative AI Workflows',
+              'Autonomous Coding Agents',
+              'Multimodal Vision & OCR',
+              'AI Shift Report Synthesis',
+              'Automated Decision Rules'
+            ].map((tag, i) => (
+              <span key={i} className="text-xs px-3 py-1.5 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-200 font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* 4 Tech Pillars Grid */}

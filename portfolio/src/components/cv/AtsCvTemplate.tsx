@@ -89,7 +89,7 @@ export function AtsCvTemplate() {
             Professional Summary
           </h2>
           <p className="text-xs sm:text-sm text-slate-800 leading-relaxed text-justify">
-            Accomplished Operations Leader and Systems Specialist with over <strong>6 years of continuous leadership experience</strong> at <strong>Albaik Food Systems Co.</strong> (Saudi Arabia), directing high-volume fast-casual kitchen and front-of-house teams. Expert in <strong>HACCP compliance</strong>, crew training, commercial kitchen maintenance, and food safety quality assurance. Concurrently an active full-stack software and Python automation developer, creating internal bots that automate paperless compliance audits and customer messaging pipelines. Ready for immediate relocation to Ireland or Europe under General Employment or Critical Skills schemes.
+            Accomplished Operations Leader and Systems Specialist with over <strong>6 years of continuous leadership experience</strong> at <strong>Albaik Food Systems Co.</strong> (Saudi Arabia), directing high-volume fast-casual kitchen and front-of-house teams. Expert in <strong>daily supplier ordering, supply chain coordination, inventory par levels</strong>, and strict <strong>HACCP & NSF food safety compliance</strong>. Concurrently an advanced <strong>Master User of AI</strong> and full-stack software/Python automation developer, leveraging prompt engineering, LLM agents, and custom bots that automate paperless compliance audits and customer messaging pipelines. Ready for immediate relocation to Ireland or Europe under General Employment or Critical Skills schemes.
           </p>
         </section>
 
@@ -100,20 +100,24 @@ export function AtsCvTemplate() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div>
-              <h3 className="font-bold text-slate-900 mb-1">Hospitality & Operations Leadership:</h3>
+              <h3 className="font-bold text-slate-900 mb-1">Operations & Supply Chain Leadership:</h3>
               <ul className="list-disc list-inside space-y-0.5 text-slate-700">
                 <li>High-Volume Restaurant & Shift Supervision (Albaik)</li>
-                <li>HACCP & NSF Food Safety Certification</li>
+                <li>Supply Chain, Vendor Ordering & Purchase Orders</li>
+                <li>Stock Par-Level Replenishment & Cold-Chain Auditing</li>
+                <li>HACCP, ISO & NSF Food Safety Certified Standards</li>
                 <li>Commercial Fryer Calibration (NSF/PFC) & Oil Quality</li>
                 <li>Crew Coaching & Talent Mentoring (25+ staff)</li>
-                <li>Inventory Control, Loss Prevention & Waste Reduction</li>
+                <li>Inventory Loss Prevention & Food Waste Reduction (14%)</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 mb-1">Software & Technical Engineering:</h3>
+              <h3 className="font-bold text-slate-900 mb-1">AI, Software & Automation Engineering:</h3>
               <ul className="list-disc list-inside space-y-0.5 text-slate-700">
+                <li><strong>Master User of AI:</strong> Prompt Engineering, LLM Agents & Generative Workflows</li>
+                <li>AI-Assisted Operational Reporting & Multimodal Document Processing</li>
                 <li>Full-Stack Web (Next.js 15, React 19, TypeScript, Tailwind)</li>
-                <li>Python Automation (Playwright, Selenium, Web Scrapers)</li>
+                <li>Python Process Automation (Playwright, Scrapers, Bot Scripts)</li>
                 <li>WhatsApp Cloud Business API Integration</li>
                 <li>Relational Databases (PostgreSQL, MySQL, SQLite)</li>
                 <li>POS Systems, Network Routers & Hardware Troubleshooting</li>
@@ -144,8 +148,10 @@ export function AtsCvTemplate() {
 
             <ul className="list-disc list-inside space-y-1 text-xs text-slate-700 leading-relaxed">
               <li>Direct and coach 25+ kitchen, fry-station, and counter crew members per shift in one of the world's highest-transaction dining environments.</li>
+              <li>Lead daily raw protein, oil, and packaging supplier ordering cycles; maintain accurate par levels with zero stock-out downtime during peak rush periods.</li>
+              <li>Inspect cold-chain delivery trucks, verify temperature compliance manifests at dock receipt, and enforce strict FIFO rotation, cutting food spoilage by 14%.</li>
               <li>Enforce strict HACCP, ISO food safety, and NSF temperature guidelines across commercial fryers (NSF, PFC, and corn cookers), maintaining an unbroken 100% compliance audit record.</li>
-              <li>Engineered custom Python automated morning compliance scripts that verify fryer parameters, CCP logs, and hygiene records, saving 45 minutes of daily administrative overhead.</li>
+              <li>Leverage Generative AI tools and custom Python automated scripts to synthesize shift logs and submit morning compliance checklists, saving 45 minutes of daily administrative overhead.</li>
               <li>Manage peak rush hour velocity, ensuring ticket times meet strict franchise SLAs while maintaining optimal food taste, presentation, and packaging integrity.</li>
               <li>Trained and on-boarded over 60 new crew members across six years, fostering high retention, team morale, and operational safety culture.</li>
             </ul>
@@ -202,6 +208,8 @@ export function AtsCvTemplate() {
               <p className="text-slate-600">Dhaka Education Board, Bangladesh</p>
               <p className="text-slate-700 mt-1">
                 • Advanced Food Safety & HACCP Hygiene Protocols (Saudi Arabia)
+                <br />• Supply Chain Par-Level Ordering & Food Inventory Practices
+                <br />• Master User of AI & Process Automation Specialist
                 <br />• Full-Stack Web Development & Modern JavaScript (Online)
               </p>
             </div>
