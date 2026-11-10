@@ -127,8 +127,8 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
             {/* 3D Character Main Display */}
             <div className="relative w-full h-[430px] rounded-2xl overflow-hidden bg-slate-950/80 border border-white/10">
               <Image
-                src="/images/avatar_3d.jpg"
-                alt="3D Avatar Md Hakim Mia"
+                src="/images/avatar_3d_hd.jpg"
+                alt="Full HD 3D Avatar Md Hakim Mia"
                 fill
                 className="object-cover object-top scale-100 group-hover:scale-105 transition duration-700 ease-out"
                 priority
