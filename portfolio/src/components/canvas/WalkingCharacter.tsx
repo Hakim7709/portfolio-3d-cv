@@ -86,8 +86,8 @@ export function WalkingCharacter({ scrollProgress }: WalkingCharacterProps) {
           <meshStandardMaterial color="#38bdf8" roughness={0.2} />
         </mesh>
         {/* Albaik Coach Badge / Golden Lapel Pin */}
-        <mesh position={[0.22, 0.28, 0.2]}>
-          <cylinderGeometry args={[0.045, 0.045, 0.02, 16]} rotation={[Math.PI / 2, 0, 0]} />
+        <mesh position={[0.22, 0.28, 0.2]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.045, 0.045, 0.02, 16]} />
           <meshStandardMaterial color="#f59e0b" roughness={0.2} metalness={0.8} emissive="#f59e0b" emissiveIntensity={0.3} />
         </mesh>
       </group>
