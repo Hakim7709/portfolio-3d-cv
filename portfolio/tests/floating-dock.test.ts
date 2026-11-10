@@ -18,3 +18,4 @@ describe('Floating Dock Action Integrity', () => {
     expect(CANDIDATE_DATA.githubUrl).toBe('https://github.com/Hakim7709');
   });
 });
+

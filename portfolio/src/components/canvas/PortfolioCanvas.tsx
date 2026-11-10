@@ -83,3 +83,4 @@ export function PortfolioCanvas({ scrollProgress }: PortfolioCanvasProps) {
     </div>
   );
 }
+

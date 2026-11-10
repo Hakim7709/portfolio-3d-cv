@@ -148,3 +148,4 @@ export const CANDIDATE_DATA: CandidateData = {
     availability: "Immediate Notice Period / Ready for International Deployment"
   }
 };
+

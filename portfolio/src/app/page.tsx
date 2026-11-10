@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { HeroStage } from '@/components/sections/HeroStage';
 import { AlbaikStage } from '@/components/sections/AlbaikStage';
 import { TechLabStage } from '@/components/sections/TechLabStage';
@@ -43,11 +44,32 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-[#070a12] text-white selection:bg-cyan-500 selection:text-black">
-      {/* 1. Interactive 3D Canvas Layer */}
+      {/* 1. Fixed Background 3D Avatar Hologram Picture */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
+        <div
+          className="relative w-full h-full max-w-4xl max-h-[85vh] transition-transform duration-700 ease-out"
+          style={{
+            transform: `translateY(${scrollProgress * -50}px) scale(${1 + scrollProgress * 0.05})`,
+            opacity: 0.32
+          }}
+        >
+          <Image
+            src="/images/avatar_3d_blend.png"
+            alt="3D Avatar Background"
+            fill
+            className="object-contain filter drop-shadow-[0_0_90px_rgba(56,189,248,0.35)]"
+            priority
+          />
+        </div>
+        {/* Ambient Dark Gradient Vignette for optimal text contrast */}
+        <div className="absolute inset-0 bg-radial from-transparent via-[#070a12]/60 to-[#070a12] pointer-events-none" />
+      </div>
+
+      {/* 2. Interactive 3D Canvas Layer */}
       <PortfolioCanvas scrollProgress={scrollProgress} />
 
-      {/* 2. Top Navigation Bar */}
-      <header className="fixed top-0 inset-x-0 z-40 bg-slate-950/70 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      {/* 3. Top Navigation Bar */}
+      <header className="fixed top-0 inset-x-0 z-40 bg-slate-950/75 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-amber-400 flex items-center justify-center font-black text-slate-950 text-sm shadow-md shadow-cyan-500/20">
             H
@@ -91,7 +113,7 @@ export default function Home() {
         </Link>
       </header>
 
-      {/* 3. Top Scroll Progress Indicator */}
+      {/* 4. Top Scroll Progress Indicator */}
       <div className="fixed top-0 inset-x-0 h-1 z-50 bg-slate-900">
         <div
           className="h-full bg-gradient-to-r from-cyan-500 via-amber-400 to-emerald-500 transition-all duration-75"
@@ -99,13 +121,13 @@ export default function Home() {
         />
       </div>
 
-      {/* 4. Live 3D Walk Status Tracker (Float Pill) */}
+      {/* 5. Live 3D Walk Status Tracker (Float Pill) */}
       <div className="fixed top-18 right-4 z-30 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-white/10 backdrop-blur-md text-[11px] text-slate-300 font-mono">
         <Footprints className="w-3.5 h-3.5 text-cyan-400 animate-bounce" />
         <span>3D Walk: {Math.round(scrollProgress * 100)}% Journey</span>
       </div>
 
-      {/* 5. Scrollable 5-Waypoint Content Layers */}
+      {/* 6. Scrollable 5-Waypoint Content Layers */}
       <div className="relative z-10">
         <HeroStage onScrollToNext={() => scrollToSection('albaik')} />
         <AlbaikStage />
@@ -114,7 +136,7 @@ export default function Home() {
         <GlobalTerminalStage />
       </div>
 
-      {/* 6. Always-On Floating Action Dock */}
+      {/* 7. Always-On Floating Action Dock */}
       <FloatingDock />
     </main>
   );

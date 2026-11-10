@@ -69,3 +69,4 @@ if __name__ == "__main__":
         cover_letter_body="Please find attached my CV for the Assistant Manager position. With 6 years at Albaik and strong operational & technical leadership, I am eager to contribute to your team."
     )
     save_email_draft(test_msg, "sample_application_draft.eml")
+

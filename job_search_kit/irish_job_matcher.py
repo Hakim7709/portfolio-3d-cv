@@ -94,3 +94,4 @@ if __name__ == "__main__":
     }
     result = analyze_job_posting(**sample_job)
     print(json.dumps(result, indent=2))
+

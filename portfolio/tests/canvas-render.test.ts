@@ -37,3 +37,4 @@ describe('3D Scroll-Driven Walking Mechanics', () => {
     expect(Math.abs(calculateCurvatureX(0.2))).toBeGreaterThan(0.5);
   });
 });
+

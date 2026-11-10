@@ -468,3 +468,4 @@ git commit -m "chore(release): complete 3d portfolio, ats cv suite, and job kit"
 - [x] No placeholders or TBDs.
 - [x] TDD test commands provided for every core module.
 - [x] Ready for Subagent-Driven or Inline Execution.
+

@@ -23,3 +23,4 @@ describe('ATS CV Keyword and Content Requirements', () => {
     expect(CANDIDATE_DATA.email).toBe('mdhakimmia.me@gmail.com');
   });
 });
+

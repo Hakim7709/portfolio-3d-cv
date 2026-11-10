@@ -31,3 +31,4 @@ describe('Candidate Data Model Integrity', () => {
     });
   });
 });
+
