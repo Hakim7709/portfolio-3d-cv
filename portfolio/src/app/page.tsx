@@ -44,25 +44,43 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-[#070a12] text-white selection:bg-cyan-500 selection:text-black">
-      {/* 1. Fixed Background 3D Avatar Hologram Picture */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
+      {/* 1. Real Cinematic 3D Cybernetic Operations Center Background */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div
-          className="relative w-full h-full max-w-4xl max-h-[85vh] transition-transform duration-700 ease-out"
+          className="relative w-full h-full transition-transform duration-700 ease-out"
           style={{
-            transform: `translateY(${scrollProgress * -50}px) scale(${1 + scrollProgress * 0.05})`,
-            opacity: 0.32
+            transform: `scale(${1 + scrollProgress * 0.05}) translateY(${scrollProgress * -25}px)`
           }}
         >
           <Image
-            src="/images/avatar_3d_blend.png"
-            alt="3D Avatar Background"
+            src="/images/cyber_runway_bg.jpg"
+            alt="Cinematic 3D Cybernetic Environment"
             fill
-            className="object-contain filter drop-shadow-[0_0_90px_rgba(56,189,248,0.35)]"
+            className="object-cover object-center opacity-45"
             priority
           />
         </div>
-        {/* Ambient Dark Gradient Vignette for optimal text contrast */}
-        <div className="absolute inset-0 bg-radial from-transparent via-[#070a12]/60 to-[#070a12] pointer-events-none" />
+
+        {/* Ambient 3D Character Hologram Silhouette in Midground */}
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          style={{
+            transform: `translateY(${scrollProgress * -40}px)`,
+            opacity: 0.25
+          }}
+        >
+          <div className="relative w-full h-full max-w-3xl max-h-[80vh]">
+            <Image
+              src="/images/avatar_3d_blend.png"
+              alt="3D Avatar Hologram"
+              fill
+              className="object-contain filter drop-shadow-[0_0_80px_rgba(6,182,212,0.4)]"
+            />
+          </div>
+        </div>
+
+        {/* Cinematic Vignette Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070a12]/90 via-[#070a12]/60 to-[#070a12]/95 pointer-events-none" />
       </div>
 
       {/* 2. Interactive 3D Canvas Layer */}

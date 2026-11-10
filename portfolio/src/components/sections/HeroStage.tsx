@@ -20,7 +20,7 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
           <div className="relative mb-5 flex items-center gap-4">
             <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-cyan-400/60 shadow-xl shadow-cyan-500/20 bg-slate-900">
               <Image
-                src="/images/profile.jpg"
+                src="/images/hakim_executive.jpg"
                 alt={CANDIDATE_DATA.name}
                 fill
                 className="object-cover object-top scale-105"
@@ -152,11 +152,11 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
                   </div>
                 </div>
 
-                {/* Cropped Passport Portrait Thumbnail */}
-                <div className="relative w-11 h-13 rounded-lg overflow-hidden border border-white/30 shadow-md" title="Official Passport Photo Verified">
+                {/* Verified Executive Portrait Thumbnail */}
+                <div className="relative w-11 h-13 rounded-lg overflow-hidden border border-white/30 shadow-md" title="Official Executive Photo Verified">
                   <Image
-                    src="/images/profile.jpg"
-                    alt="Official Passport Photo"
+                    src="/images/hakim_executive.jpg"
+                    alt="Official Executive Photo"
                     fill
                     className="object-cover object-top"
                   />
