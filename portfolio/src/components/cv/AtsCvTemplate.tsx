@@ -74,7 +74,7 @@ export function AtsCvTemplate() {
           {/* Portrait Photo */}
           <div className="relative w-24 h-28 rounded-lg overflow-hidden border border-slate-300 shrink-0 shadow-sm">
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile_cv.jpg"
               alt={CANDIDATE_DATA.name}
               fill
               className="object-cover object-top"

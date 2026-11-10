@@ -16,6 +16,28 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
         
         {/* Left Column: Text & Call to Action (7 cols) */}
         <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          {/* Candidate Real Profile Avatar Photo */}
+          <div className="relative mb-5 flex items-center gap-4">
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-cyan-400/60 shadow-xl shadow-cyan-500/20 bg-slate-900">
+              <Image
+                src="/images/profile.jpg"
+                alt={CANDIDATE_DATA.name}
+                fill
+                className="object-cover object-top scale-105"
+                priority
+              />
+            </div>
+            <div className="text-left">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                Verified Candidate Profile
+              </div>
+              <div className="text-xs text-slate-400 mt-1 font-mono">
+                Albaik Food Systems • 6 Yrs
+              </div>
+            </div>
+          </div>
+
           {/* Relocation & Status Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-cyan-500/30 backdrop-blur-md text-cyan-300 text-xs sm:text-sm font-medium mb-6 shadow-lg shadow-cyan-500/10">
             <Sparkles className="w-4 h-4 text-amber-400" />
