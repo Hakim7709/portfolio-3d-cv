@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ireland 50-Company Application Campaign - Md Hakim Mia</title>
+  <style>
+    :root {
+      --bg: #070a12;
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --border: rgba(255, 255, 255, 0.1);
+      --accent: #38bdf8;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --purple: #a855f7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: #f1f5f9;
+      line-height: 1.5;
+      padding: 24px 16px 60px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    
+    /* Header Area */
+    .hero-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-cyan { background: rgba(6, 182, 212, 0.15); color: #38bdf8; border: 1px solid rgba(6, 182, 212, 0.3); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    
+    h1 { font-size: 28px; font-weight: 800; color: #ffffff; margin: 10px 0 6px; letter-spacing: -0.5px; }
+    .candidate-info { font-size: 14px; color: #94a3b8; }
+    .candidate-info strong { color: #e2e8f0; }
+    
+    /* Progress Tracker Bar */
+    .progress-box {
+      margin-top: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .progress-header { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+    .progress-bar-bg { height: 10px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #0284c7, #10b981); transition: width 0.3s ease; }
+    
+    /* Control Toolbar */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 260px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-input:focus { border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2); }
+    
+    .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill-btn {
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill-btn:hover, .pill-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+    }
+    
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 16px;
+    }
+    .company-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+      position: relative;
+    }
+    .company-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .company-card.applied {
+      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(6, 78, 59, 0.15);
+    }
+    
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .company-number { font-size: 11px; font-weight: 700; color: #64748b; font-mono; }
+    .company-name { font-size: 17px; font-weight: 800; color: #ffffff; }
+    .company-category { font-size: 12px; color: #38bdf8; font-weight: 600; margin-top: 2px; }
+    
+    .company-meta {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin: 12px 0 16px;
+      line-height: 1.5;
+    }
+    .company-meta strong { color: #cbd5e1; }
+    .company-notes {
+      background: rgba(255,255,255,0.03);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      border-left: 3px solid #38bdf8;
+    }
+    
+    /* Buttons */
+    .btn-row { display: flex; gap: 8px; margin-bottom: 10px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary { background: #0284c7; color: white; flex: 1; }
+    .btn-primary:hover { background: #0369a1; }
+    .btn-email { background: #059669; color: white; flex: 1; }
+    .btn-email:hover { background: #047857; }
+    .btn-copy { background: rgba(255,255,255,0.06); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
+    .btn-copy:hover { background: rgba(255,255,255,0.12); color: white; }
+    
+    /* Status Bar */
+    .status-bar {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+    }
+    .status-select {
+      background: rgba(15, 23, 42, 0.9);
+      color: #f1f5f9;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 11px;
+      outline: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Card -->
+    <div class="hero-card">
+      <div class="hero-top">
+        <div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="badge badge-cyan">Ireland Fast-Track 2026</span>
+            <span class="badge badge-emerald">50 Verified Employers</span>
+            <span class="badge badge-purple">General Employment Permit Eligible</span>
+          </div>
+          <h1>Target 50 Ireland Application Campaign</h1>
+          <div class="candidate-info">
+            Candidate: <strong>Md Hakim Mia</strong> • 6 Yrs Albaik Leadership, HACCP &amp; Full-Stack AI Automation • WhatsApp: <strong>+966570457976</strong>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="http://localhost:3000" target="_blank" class="btn btn-primary" style="padding: 10px 16px;">🌐 View 3D Portfolio</a>
+          <a href="http://localhost:3000/cv" target="_blank" class="btn btn-email" style="padding: 10px 16px;">📄 Print / View ATS CV</a>
+        </div>
+      </div>
+
+      <div class="progress-box">
+        <div class="progress-header">
+          <span id="progress-text">Applications Progress: 0 of 50 Companies Contacted</span>
+          <span id="progress-percent" style="color: #34d399;">0% Complete</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="controls">
+      <input type="text" id="search-box" class="search-input" placeholder="🔍 Search by company name, location (e.g. Dublin, Galway), or category...">
+      <div class="filter-pills">
+        <button class="pill-btn active" onclick="filterCategory('All')">All (50)</button>
+        <button class="pill-btn" onclick="filterCategory('Fast-Casual & QSR')">QSR &amp; Fast-Casual</button>
+        <button class="pill-btn" onclick="filterCategory('Hotel')">Hotels &amp; Resorts</button>
+        <button class="pill-btn" onclick="filterCategory('Catering')">Contract Catering</button>
+        <button class="pill-btn" onclick="filterCategory('Retail')">Food Retail &amp; Forecourt</button>
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="companies-grid" class="grid">
+      <!-- Injected by JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    const companies = [{"id": 1, "name": "Supermac's Ireland", "category": "Fast-Casual & QSR", "hr_email": "careers@supermacs.ie", "portal_url": "https://supermacs.ie/careers/", "locations": "Galway, Dublin, Limerick, Nationwide (100+ stores)", "sponsorship": "High (General Employment Permit)", "notes": "Ireland's largest indigenous fast-food chain; high demand for experienced fast-food supervisors."}, {"id": 2, "name": "Camile Thai Kitchen", "category": "Tech-Forward Fast-Casual", "hr_email": "recruitment@camile.ie", "portal_url": "https://www.camile.ie/careers", "locations": "Dublin, Cork, Belfast, Nationwide", "sponsorship": "High (Frequent work permit sponsor)", "notes": "Fastest-growing delivery/fast-casual franchise; heavily values technology and automated kitchens."}, {"id": 3, "name": "Applegreen PLC", "category": "Motorway Service & Dining Hubs", "hr_email": "careers@applegreenstores.com", "portal_url": "https://careers.applegreenstores.com/", "locations": "Nationwide Motorway Plazas & Travel Plazas", "sponsorship": "High (Major sponsor)", "notes": "Operates high-volume multi-brand food courts (Burger King, Subway, Bakewell, Chopstix)."}, {"id": 4, "name": "Press Up Hospitality Group", "category": "Casual Dining & Venues", "hr_email": "careers@pressup.ie", "portal_url": "https://pressup.ie/careers/", "locations": "Dublin, Cork, Major Urban Centers", "sponsorship": "Moderate to High", "notes": "Ireland's leading hospitality group with 65+ bars, restaurants, and cinemas (Wowburger, Elephant & Castle)."}, {"id": 5, "name": "Musgrave Group (Centra & SuperValu)", "category": "Fresh Food Retail & Operations", "hr_email": "careers@musgravegroup.com", "portal_url": "https://www.musgravegroup.com/careers/", "locations": "Cork, Dublin, Nationwide", "sponsorship": "Moderate", "notes": "Ireland's largest grocery distributor; operates deli and hot food production counters."}, {"id": 6, "name": "Dalata Hotel Group (Clayton & Maldron)", "category": "Hotel & Event Food Operations", "hr_email": "careers@dalatahotelgroup.com", "portal_url": "https://dalatahotelgroup.com/careers/", "locations": "Dublin, Cork, Galway, Limerick, Wexford", "sponsorship": "High (Largest hotel operator in Ireland)", "notes": "Runs high-volume hotel banqueting, room service, and restaurant dining."}, {"id": 7, "name": "Circle K Ireland", "category": "Forecourt Convenience & Dining", "hr_email": "careers@circlekeurope.com", "portal_url": "https://www.circlek.ie/careers", "locations": "Over 400 service hubs across Ireland", "sponsorship": "Moderate to High", "notes": "Major forecourt dining operator with extensive hot food, deli, and coffee counter operations."}, {"id": 8, "name": "Eddie Rocket's Ireland", "category": "American Diner & QSR", "hr_email": "careers@eddierockets.ie", "portal_url": "https://eddierockets.ie/careers", "locations": "Dublin, Kildare, Bray, Nationwide", "sponsorship": "Moderate to High", "notes": "Iconic retro diner chain with 40+ locations specializing in commercial fryers and grill velocity."}, {"id": 9, "name": "Boojum Ireland", "category": "Fast-Casual Mexican", "hr_email": "careers@boojummex.com", "portal_url": "https://www.boojummex.com/careers", "locations": "Dublin, Galway, Cork, Limerick, Belfast", "sponsorship": "Moderate to High", "notes": "High-velocity burrito assembly lines; values speed, food safety, and crew energy."}, {"id": 10, "name": "Chopped (The Healthy Food Co.)", "category": "Fast-Casual Healthy Food", "hr_email": "info@chopped.ie", "portal_url": "https://www.chopped.ie/careers/", "locations": "Dublin, Galway, Nationwide", "sponsorship": "Moderate", "notes": "Over 50 franchised salad and wrap bars across Ireland and travel hubs."}, {"id": 11, "name": "Sodexo Ireland", "category": "Corporate & Contract Dining", "hr_email": "hr.ireland@sodexo.com", "portal_url": "https://ie.sodexo.com/careers", "locations": "Dublin, Shannon, Cork, Nationwide", "sponsorship": "High (Global Enterprise)", "notes": "Manages enterprise canteens, university dining, and high-volume corporate food services."}, {"id": 12, "name": "Compass Group Ireland", "category": "Contract Catering & Foodservice", "hr_email": "careers@compass-group.ie", "portal_url": "https://www.compass-group.ie/careers/", "locations": "Dublin, Cork, Galway, Limerick", "sponsorship": "High (Global Catering Leader)", "notes": "Ireland's largest food and support services provider with hundreds of managed sites."}, {"id": 13, "name": "Aramark Ireland", "category": "Hospitality & Dining Management", "hr_email": "careers@aramark.ie", "portal_url": "https://careers.aramark.com/", "locations": "Dublin, Cork, Galway, Kildare", "sponsorship": "High (Active permit sponsor)", "notes": "Operates high-volume dining, Avoca caf\u00e9s, and institutional foodservice operations."}, {"id": 14, "name": "KSG (Kylemore Services Group)", "category": "Hospitality & Restaurant Group", "hr_email": "recruitment@ksg.ie", "portal_url": "https://www.ksg.ie/careers", "locations": "Dublin, Cork, Limerick, Nationwide", "sponsorship": "High (Irish-owned catering giant)", "notes": "120+ restaurant and catering locations across Irish hospitals, colleges, and business parks."}, {"id": 15, "name": "BaxterStorey Ireland", "category": "Premium Workplace Hospitality", "hr_email": "irelandcareers@baxterstorey.com", "portal_url": "https://baxterstorey.com/careers", "locations": "Dublin Silicon Docks & Tech Hubs", "sponsorship": "High (Tech campus catering)", "notes": "Runs dining services for top tech multinationals in Dublin; loves tech-savvy hospitality supervisors."}, {"id": 16, "name": "Leonardo Hotels Ireland (Jurys Inn)", "category": "Hotel Operations", "hr_email": "recruitment@leonardohotels.co.uk", "portal_url": "https://www.leonardohotels.co.uk/careers", "locations": "Dublin (Christchurch, Parnell, Custom House), Galway, Cork", "sponsorship": "High", "notes": "Central city business hotels with high-occupancy breakfast and conference dining."}, {"id": 17, "name": "Louis Fitzgerald Group", "category": "Pub, Hotel & Restaurant Group", "hr_email": "hr@louisfitzgerald.com", "portal_url": "https://louisfitzgerald.com/careers/", "locations": "Dublin & Kildare (Joel's Restaurant, Louis Fitzgerald Hotel, Stag's Head)", "sponsorship": "Moderate to High", "notes": "One of Ireland's largest family-owned pub and restaurant empires."}, {"id": 18, "name": "PREM Group Ireland", "category": "Hospitality Management", "hr_email": "careers@premgroup.com", "portal_url": "https://premgroup.com/careers/", "locations": "Dublin, Kilkenny, Waterford", "sponsorship": "Moderate to High", "notes": "Operates premier serviced apartments, hotels, and restaurant venues across Ireland."}, {"id": 19, "name": "BWG Foods (Spar, Mace, Londis)", "category": "Retail Foodservice & Wholesale", "hr_email": "careers@bwg.ie", "portal_url": "https://bwgfoods.ie/careers/", "locations": "Dublin, Nationwide", "sponsorship": "Moderate", "notes": "Operates over 1,000 stores with hot food delis and bakery operations."}, {"id": 20, "name": "Dunnes Stores", "category": "Supermarket & Food Hall", "hr_email": "careers@dunnesstores.com", "portal_url": "https://www.dunnesstores.com/careers", "locations": "Nationwide flagship stores", "sponsorship": "Moderate", "notes": "Premium food halls, deli counters, and Caf\u00e9 Sol chains."}, {"id": 21, "name": "Tesco Ireland", "category": "Retail & Food Operations", "hr_email": "careers@tesco.ie", "portal_url": "https://www.tesco.ie/careers", "locations": "160+ locations across Ireland", "sponsorship": "Moderate to High", "notes": "Major shift leader and fresh food department team supervisor opportunities."}, {"id": 22, "name": "Lidl Ireland", "category": "Discount Supermarket Operations", "hr_email": "jobs@lidl.ie", "portal_url": "https://jobs.lidl.ie/", "locations": "Nationwide (200+ stores)", "sponsorship": "Moderate to High", "notes": "Known for market-leading compensation and rigorous operational shift leadership."}, {"id": 23, "name": "Aldi Ireland", "category": "Retail Store Management", "hr_email": "recruitment@aldi.ie", "portal_url": "https://www.aldirecruitment.ie/", "locations": "Nationwide (150+ stores)", "sponsorship": "Moderate to High", "notes": "Hires dynamic shift managers capable of fast stock turnaround and team efficiency."}, {"id": 24, "name": "Insomnia Coffee Company", "category": "Coffee Shop & Quick Food", "hr_email": "jobs@insomnia.ie", "portal_url": "https://www.insomnia.ie/careers", "locations": "170+ stores across Ireland and UK", "sponsorship": "Moderate", "notes": "High transaction volume, sandwich prep, and store supervisor roles."}, {"id": 25, "name": "Five Guys Ireland", "category": "Fast-Casual Burger & Fries", "hr_email": "careers@fiveguys.ie", "portal_url": "https://www.fiveguys.ie/careers", "locations": "Dublin (Dundrum, George's St, Swords), Belfast", "sponsorship": "Moderate to High", "notes": "Heavy focus on fresh potato frying, HACCP guidelines, and fast kitchen lines."}, {"id": 26, "name": "Nando's Ireland", "category": "Casual Dining Flame-Grilled", "hr_email": "recruitment@nandos.ie", "portal_url": "https://www.nandos.ie/careers", "locations": "Dublin (Dundrum, Mary St, Dun Laoghaire), Cork", "sponsorship": "Moderate to High", "notes": "Known for stellar hospitality culture, assistant manager career paths, and crew coaching."}, {"id": 27, "name": "Wagamama Ireland", "category": "Pan-Asian Casual Dining", "hr_email": "careers@wagamama.ie", "portal_url": "https://www.wagamama.ie/careers", "locations": "Dublin (South King St, Blanchardstown, Dundrum)", "sponsorship": "Moderate", "notes": "High speed open-kitchen dining, precision cooking line coordination."}, {"id": 28, "name": "Milano / PizzaExpress Ireland", "category": "Pizzeria & Italian Dining", "hr_email": "careers@milano.ie", "portal_url": "https://www.milano.ie/careers", "locations": "Dublin, Cork, Limerick, Ennis", "sponsorship": "Moderate", "notes": "Established dining brand with 15+ prime restaurants across Ireland."}, {"id": 29, "name": "The Mercantile Group", "category": "Hospitality & Venue Entertainment", "hr_email": "careers@mercantilegroup.ie", "portal_url": "https://mercantilegroup.ie/careers/", "locations": "Dublin City Center (Caf\u00e9 en Seine, Nolita, Whelan's, Opium)", "sponsorship": "Moderate to High", "notes": "High-volume city center hospitality venues with full restaurant dining."}, {"id": 30, "name": "The Doyle Collection", "category": "Luxury Boutique Hotels", "hr_email": "recruitment@doylecollection.com", "portal_url": "https://www.doylecollection.com/careers", "locations": "Dublin (The Westbury, The Croke Park)", "sponsorship": "Moderate to High", "notes": "Iconic luxury hotels in Dublin with world-class restaurant operations."}, {"id": 31, "name": "Talbot Hotel Collection", "category": "Hotels & Dining", "hr_email": "careers@talbothotelcollection.ie", "portal_url": "https://www.talbothotelcollection.ie/careers.html", "locations": "Wexford, Dublin (Stillorgan), Carlow, Clonmel", "sponsorship": "Moderate to High", "notes": "Prominent Irish hotel group with busy food and beverage operations."}, {"id": 32, "name": "Hastings Hotels", "category": "Hotels & Luxury Resorts", "hr_email": "careers@hastingshotels.com", "portal_url": "https://www.hastingshotels.com/careers", "locations": "Northern Ireland & Border Counties (Europa, Grand Central)", "sponsorship": "Moderate to High", "notes": "Seven prestigious hotels with massive event and dining volume."}, {"id": 33, "name": "iNua Hospitality Collection", "category": "Regional Hotel Operator", "hr_email": "careers@inua.ie", "portal_url": "https://inua.ie/careers/", "locations": "Cork, Limerick, Athlone, Sligo, Killarney (Radisson Blu & Muckross Park)", "sponsorship": "High", "notes": "Ireland's largest regional hotel operator, actively hiring international hospitality talent."}, {"id": 34, "name": "Choice Hotel Group Ireland", "category": "Hotel & Leisure Group", "hr_email": "jobs@choicehotelgroup.ie", "portal_url": "https://www.choicehotelgroup.ie/careers", "locations": "Galway, Dublin, Ennis, Clare", "sponsorship": "Moderate", "notes": "Owns The G Hotel Galway, Hotel Meyrick, and Hotel Woodstock."}, {"id": 35, "name": "Griffin Hotel Group", "category": "Destination Resorts & Spas", "hr_email": "hr@griffinhotels.com", "portal_url": "https://www.griffinhotels.com/careers.html", "locations": "Wexford (Monart Destination Spa, Ferrycarrig Hotel)", "sponsorship": "Moderate to High", "notes": "Award-winning dining and restaurant operations with strict quality benchmarks."}, {"id": 36, "name": "Windward Management", "category": "Hotel Asset & Operations Management", "hr_email": "careers@windward.ie", "portal_url": "https://www.windward.ie/careers", "locations": "Dublin Airport, Cork, Belfast", "sponsorship": "High", "notes": "Manages Radisson Blu Dublin Airport, Harvey's Point, and high-turnover airport transit hotels."}, {"id": 37, "name": "Pembroke Hospitality Ireland", "category": "Hotel & Resort Operators", "hr_email": "info@pembrokehospitality.com", "portal_url": "https://pembrokehospitality.com/", "locations": "Dublin, Nationwide", "sponsorship": "Moderate", "notes": "Operates luxury boutique and mid-scale hotels across Ireland."}, {"id": 38, "name": "Fallon & Byrne Dublin", "category": "Food Hall, Deli & Restaurant", "hr_email": "careers@fallonandbyrne.com", "portal_url": "https://www.fallonandbyrne.com/careers", "locations": "Exchequer Street, Dublin City Center", "sponsorship": "Moderate", "notes": "Renowned food hall, artisan deli, and 100-seat restaurant in central Dublin."}, {"id": 39, "name": "Avoca Ireland", "category": "Artisan Food, Retail & Caf\u00e9s", "hr_email": "careers@avoca.com", "portal_url": "https://www.avoca.com/en/careers", "locations": "Kilmacanogue, Rathcoole, Dublin City, Dunboyne", "sponsorship": "Moderate to High", "notes": "13 luxury food stores, caf\u00e9s, and bakeries under the Aramark umbrella."}, {"id": 40, "name": "Butlers Chocolate Caf\u00e9s", "category": "Specialty Caf\u00e9 & Confectionery", "hr_email": "jobs@butlerschocolates.com", "portal_url": "https://www.butlerschocolates.com/en/careers", "locations": "Dublin (Grafton St, Henry St, Airport), Cork, Galway, Limerick", "sponsorship": "Moderate", "notes": "25+ busy chocolate caf\u00e9s in Ireland, including Dublin Airport terminals."}, {"id": 41, "name": "Costa Coffee Ireland (MBCC Foods)", "category": "High-Volume Caf\u00e9 Franchise", "hr_email": "careers@mbccfoodsireland.com", "portal_url": "https://mbccfoodsireland.com/careers/", "locations": "115+ stores across Ireland", "sponsorship": "Moderate", "notes": "Master franchisee for Costa Coffee in Ireland; values shift coaches and velocity."}, {"id": 42, "name": "Starbucks Ireland (Entertainment Enterprises)", "category": "Specialty Coffee & QSR", "hr_email": "careers@starbucks.ie", "portal_url": "https://www.starbucks.ie/careers", "locations": "Dublin, Cork, Galway, Nationwide", "sponsorship": "Moderate", "notes": "High customer velocity, inventory controls, and shift supervision."}, {"id": 43, "name": "Maxol Group Ireland", "category": "Forecourt Convenience & Dining", "hr_email": "careers@maxol.ie", "portal_url": "https://www.maxol.ie/careers", "locations": "240+ service stations across Ireland", "sponsorship": "Moderate to High", "notes": "Operates Maxol Deli and Rosa Coffee dining counters across the island."}, {"id": 44, "name": "Carlton Hotel Group", "category": "Airport & City Hotels", "hr_email": "careers@carlton.ie", "portal_url": "https://www.carlton.ie/careers/", "locations": "Dublin Airport, Blanchardstown", "sponsorship": "Moderate to High", "notes": "High turnaround airport hospitality with continuous dining and banqueting operations."}, {"id": 45, "name": "Fitzers Catering Ireland", "category": "Event & Stadium Catering", "hr_email": "careers@fitzerscatering.ie", "portal_url": "https://fitzerscatering.ie/careers/", "locations": "Croke Park, Convention Centre Dublin, Major Stadia", "sponsorship": "Moderate to High", "notes": "Handles massive 50,000+ guest stadium catering events with extreme fryer/kitchen velocity."}, {"id": 46, "name": "Fresh The Good Food Market", "category": "Urban Food Market & Deli", "hr_email": "jobs@freshthegoodfoodmarket.ie", "portal_url": "https://freshthegoodfoodmarket.ie/careers/", "locations": "Dublin City (Grand Canal, Camden St, IFSC, Smithfield)", "sponsorship": "Moderate", "notes": "Specialty deli, hot food bar, and gourmet food retail in Dublin tech districts."}, {"id": 47, "name": "Clayton Hotels Ireland", "category": "Business & Conference Hotels", "hr_email": "recruitment@claytonhotels.com", "portal_url": "https://www.claytonhotels.com/careers/", "locations": "Dublin (Ballsbridge, Burlington, Cardiff Lane), Cork, Galway", "sponsorship": "High (Part of Dalata)", "notes": "Extensive breakfast buffet, fine dining, and conference food operations."}, {"id": 48, "name": "Maldron Hotels Ireland", "category": "Family & Travel Hospitality", "hr_email": "recruitment@maldronhotels.com", "portal_url": "https://www.maldronhotels.com/careers/", "locations": "Dublin Airport, Newlands Cross, Pearse St, Cork, Limerick", "sponsorship": "High (Part of Dalata)", "notes": "Grain & Grill restaurants, high volume dining and guest speed."}, {"id": 49, "name": "Zumo Fresh Juice Bars", "category": "Juice, Smoothies & Healthy QSR", "hr_email": "careers@zumo.ie", "portal_url": "https://zumo.ie/", "locations": "Dublin, Cork, Shopping Centers Nationwide", "sponsorship": "Moderate", "notes": "Fast-paced fresh beverage and health snack counter service."}, {"id": 50, "name": "Tolteca Mexican Style Grill", "category": "Fast-Casual Mexican Grill", "hr_email": "careers@tolteca.ie", "portal_url": "https://tolteca.ie/", "locations": "Dublin (Baggot St, Suffolk St, Rathmines)", "sponsorship": "Moderate", "notes": "Busy assembly-line Mexican grill in prominent student and office zones."}];
+    let currentFilter = 'All';
+    let searchQuery = '';
+
+    // Load persisted status from localStorage
+    function getStatus(id) {
+      return localStorage.getItem('applied_company_' + id) || 'Not Started';
+    }
+
+    function setStatus(id, status) {
+      localStorage.setItem('applied_company_' + id, status);
+      updateProgress();
+      renderCompanies();
+    }
+
+    function updateProgress() {
+      let count = 0;
+      companies.forEach(c => {
+        const st = getStatus(c.id);
+        if (st === 'Applied' || st === 'Interview' || st === 'Offer') {
+          count++;
+        }
+      });
+      const pct = Math.round((count / companies.length) * 100);
+      document.getElementById('progress-text').innerText = `Applications Progress: ${count} of ${companies.length} Companies Contacted`;
+      document.getElementById('progress-percent').innerText = `${pct}% Complete`;
+      document.getElementById('progress-fill').style.width = pct + '%';
+    }
+
+    function filterCategory(cat) {
+      currentFilter = cat;
+      document.querySelectorAll('.pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.includes(cat) || (cat === 'All' && btn.innerText.includes('All')));
+      });
+      renderCompanies();
+    }
+
+    document.getElementById('search-box').addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase();
+      renderCompanies();
+    });
+
+    function copyCoverLetter(name, locations) {
+      const text = `Dear Hiring Team at ${name},\n\nI am writing to express my strong enthusiasm for Restaurant Assistant Manager, Shift Operations Supervisor, or Foodservice Leadership roles at ${name} across your ${locations} operations.\n\nWith over 6 years of continuous, fast-paced operations leadership at Albaik Food Systems Co. (Saudi Arabia)—the gold standard in high-volume fast-casual dining—I direct shifts supervising 25+ crew members, maintaining 100% HACCP food safety audit records, precision supplier ordering, and cold-chain inventory par levels.\n\nConcurrently, I am an advanced Master User of AI, building automated process reporting bots that eliminate administrative shift-handover bottlenecks.\n\nI am actively seeking sponsored employment in Ireland under the General Employment Permit scheme. My passport is clean and valid until 2035, and I am prepared for immediate relocation.\n\nPlease review my verified ATS CV and contact me at ${CANDIDATE_PHONE} or ${CANDIDATE_EMAIL}.\n\nSincerely,\n${CANDIDATE_NAME}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Tailored application letter for ${name} copied to clipboard! You can paste it directly into their careers portal.`);
+      });
+    }
+
+    function renderCompanies() {
+      const container = document.getElementById('companies-grid');
+      container.innerHTML = '';
+
+      const filtered = companies.filter(c => {
+        const matchesCategory = (currentFilter === 'All') ||
+          (currentFilter === 'Hotel' && (c.category.includes('Hotel') || c.category.includes('Resort'))) ||
+          (currentFilter === 'Catering' && (c.category.includes('Catering') || c.category.includes('Dining'))) ||
+          (currentFilter === 'Retail' && (c.category.includes('Retail') || c.category.includes('Forecourt') || c.category.includes('Supermarket'))) ||
+          c.category.includes(currentFilter);
+
+        const matchesSearch = !searchQuery ||
+          c.name.toLowerCase().includes(searchQuery) ||
+          c.locations.toLowerCase().includes(searchQuery) ||
+          c.category.toLowerCase().includes(searchQuery);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      filtered.forEach(c => {
+        const status = getStatus(c.id);
+        const isApplied = (status === 'Applied' || status === 'Interview' || status === 'Offer');
+
+        const mailSubject = encodeURIComponent(`Application: Restaurant Assistant Manager / Operations Leader – Md Hakim Mia (6 Yrs Albaik Leadership)`);
+        const mailBody = encodeURIComponent(`Dear Hiring Team at ${c.name},\n\nI am applying for Restaurant Assistant Manager or Shift Leadership positions across your ${c.locations} operations.\n\nWith over 6 years of fast-paced shift leadership, 25+ crew coaching, 100% HACCP compliance, and daily supplier ordering at Albaik Food Systems, paired with master-level Generative AI and automation expertise, I am ready for immediate relocation to Ireland under employment permit sponsorship.\n\nPlease review my ATS CV and live portfolio: http://localhost:3000\n\nSincerely,\nMd Hakim Mia\n+966570457976\nmdhakimmia.me@gmail.com`);
+        const mailtoLink = `mailto:${c.hr_email}?subject=${mailSubject}&body=${mailBody}`;
+
+        const card = document.createElement('div');
+        card.className = `company-card ${isApplied ? 'applied' : ''}`;
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="company-number">#${c.id}</span>
+              <span class="badge badge-cyan">${c.sponsorship}</span>
+            </div>
+            <div class="company-name">${c.name}</div>
+            <div class="company-category">${c.category}</div>
+
+            <div class="company-meta">
+              📍 <strong>Locations:</strong> ${c.locations}<br>
+              ✉️ <strong>HR Email:</strong> <a href="mailto:${c.hr_email}" style="color: #38bdf8; text-decoration: none;">${c.hr_email}</a>
+            </div>
+
+            <div class="company-notes">
+              💡 ${c.notes}
+            </div>
+          </div>
+
+          <div>
+            <div class="btn-row">
+              <a href="${c.portal_url}" target="_blank" class="btn btn-primary" onclick="setStatus(${c.id}, 'Applied')">🚀 Career Portal</a>
+              <a href="${mailtoLink}" class="btn btn-email" onclick="setStatus(${c.id}, 'Applied')">✉️ Send Email</a>
+            </div>
+            <button class="btn btn-copy" onclick="copyCoverLetter('${c.name}', '${c.locations}')">📋 Copy Tailored Cover Letter</button>
+
+            <div class="status-bar">
+              <span>Status:</span>
+              <select class="status-select" onchange="setStatus(${c.id}, this.value)">
+                <option value="Not Started" ${status === 'Not Started' ? 'selected' : ''}>⏳ Not Started</option>
+                <option value="Applied" ${status === 'Applied' ? 'selected' : ''}>✅ Applied</option>
+                <option value="Interview" ${status === 'Interview' ? 'selected' : ''}>🎯 Interview</option>
+                <option value="Offer" ${status === 'Offer' ? 'selected' : ''}>🏆 Offer</option>
+                <option value="Rejected" ${status === 'Rejected' ? 'selected' : ''}>❌ Closed</option>
+              </select>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Initial render
+    updateProgress();
+    renderCompanies();
+  </script>
+</body>
+</html>
