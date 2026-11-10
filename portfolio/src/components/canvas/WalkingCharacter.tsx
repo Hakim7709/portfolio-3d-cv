@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { useGLTF, useAnimations } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface WalkingCharacterProps {
@@ -10,111 +11,122 @@ interface WalkingCharacterProps {
 
 export function WalkingCharacter({ scrollProgress }: WalkingCharacterProps) {
   const rootGroupRef = useRef<THREE.Group>(null);
-  const avatarMeshRef = useRef<THREE.Mesh>(null);
   const pedestalRef = useRef<THREE.Group>(null);
 
-  const [texture, setTexture] = useState<THREE.Texture | null>(null);
+  // Load real 3D rigged humanoid model with skeletal bone animations
+  const { scene, animations } = useGLTF('/models/Soldier.glb');
+  const { actions } = useAnimations(animations, rootGroupRef);
+
   const prevProgressRef = useRef<number>(scrollProgress);
   const velocityRef = useRef<number>(0);
 
   useEffect(() => {
-    const loader = new THREE.TextureLoader();
-    loader.load('/images/avatar_3d_blend_v3.png', (loadedTex) => {
-      loadedTex.colorSpace = THREE.SRGBColorSpace;
-      setTexture(loadedTex);
+    // Style materials to match Hakim's smart-casual navy & cyber aesthetic
+    scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+        if (mesh.material) {
+          const mat = mesh.material as THREE.MeshStandardMaterial;
+          if (mesh.name.toLowerCase().includes('visor')) {
+            mat.color = new THREE.Color('#06b6d4');
+            mat.emissive = new THREE.Color('#06b6d4');
+            mat.emissiveIntensity = 0.6;
+            mat.roughness = 0.1;
+            mat.metalness = 0.9;
+          } else {
+            mat.color = new THREE.Color('#162d4a'); // Deep navy blazer
+            mat.roughness = 0.35;
+          }
+        }
+      }
     });
-  }, []);
+
+    // Start in Idle pose
+    if (actions['Idle']) {
+      actions['Idle'].play();
+    }
+
+    return () => {
+      Object.values(actions).forEach((action) => action?.stop());
+    };
+  }, [scene, actions]);
 
   useFrame((state) => {
     if (!rootGroupRef.current) return;
 
-    // Detect scrolling delta/velocity
+    // Calculate real-time scrolling delta and velocity
     const deltaProgress = Math.abs(scrollProgress - prevProgressRef.current);
     prevProgressRef.current = scrollProgress;
 
-    // Smooth velocity with damping
-    const targetVelocity = deltaProgress > 0.0004 ? Math.min(deltaProgress * 90, 2.5) : 0;
-    velocityRef.current = THREE.MathUtils.lerp(velocityRef.current, targetVelocity, 0.12);
+    const targetVelocity = deltaProgress > 0.0003 ? Math.min(deltaProgress * 95, 3.0) : 0;
+    velocityRef.current = THREE.MathUtils.lerp(velocityRef.current, targetVelocity, 0.15);
 
-    // Character path: Starts at Z = -14 and walks forward to Z = 2.5
-    const targetZ = -14 + scrollProgress * 16.5;
-    const targetX = Math.sin(scrollProgress * Math.PI * 3.5) * 1.8;
+    // Path position: character walks along Z axis and sways gently along X
+    const targetZ = -13 + scrollProgress * 15.2;
+    const targetX = Math.sin(scrollProgress * Math.PI * 3.5) * 1.5;
 
     rootGroupRef.current.position.z = THREE.MathUtils.lerp(rootGroupRef.current.position.z, targetZ, 0.08);
     rootGroupRef.current.position.x = THREE.MathUtils.lerp(rootGroupRef.current.position.x, targetX, 0.08);
 
-    // Facing direction: character turns slightly in the direction of the X curve
+    // Facing direction: character turns slightly in direction of curvature
     const turnAngle = Math.cos(scrollProgress * Math.PI * 3.5) * 0.35;
     rootGroupRef.current.rotation.y = THREE.MathUtils.lerp(rootGroupRef.current.rotation.y, turnAngle, 0.1);
 
-    // Dynamic walking gait: Stride bobbing and tilt
-    const walkCycleTime = state.clock.getElapsedTime() * 12 * Math.max(velocityRef.current, 0.15);
-    const bob = Math.abs(Math.sin(walkCycleTime)) * 0.1 * (velocityRef.current > 0.15 ? 1 : 0.25);
-    rootGroupRef.current.position.y = -1.2 + bob;
-
-    // Stride tilt and roll
-    const sway = Math.sin(walkCycleTime) * 0.04 * (velocityRef.current > 0.15 ? 1 : 0.1);
-    rootGroupRef.current.rotation.z = sway;
-
-    // Subtle leaning forward when moving fast
-    const forwardLean = -Math.min(velocityRef.current * 0.08, 0.18);
-    rootGroupRef.current.rotation.x = forwardLean;
-
-    // Pedestal rotation for cybernetic effect
+    // Pedestal rotation
     if (pedestalRef.current) {
       pedestalRef.current.rotation.y = state.clock.getElapsedTime() * 0.5;
+    }
+
+    // Blend between Idle and Walk animations based on scroll activity
+    const isMoving = velocityRef.current > 0.1;
+    if (actions['Walk'] && actions['Idle']) {
+      if (isMoving) {
+        actions['Idle'].fadeOut(0.2);
+        actions['Walk'].reset().fadeIn(0.2).play();
+        actions['Walk'].timeScale = Math.max(velocityRef.current * 0.85, 0.6);
+      } else {
+        actions['Walk'].fadeOut(0.35);
+        actions['Idle'].reset().fadeIn(0.35).play();
+      }
     }
   });
 
   return (
-    <group ref={rootGroupRef} position={[0, -1.2, -14]}>
-      {/* 1. Full HD 3D Character Billboard Mesh */}
-      {texture && (
-        <mesh ref={avatarMeshRef} position={[0, 1.45, 0]} castShadow receiveShadow>
-          <planeGeometry args={[2.5, 3.3]} />
-          <meshStandardMaterial
-            map={texture}
-            transparent
-            roughness={0.25}
-            metalness={0.1}
-            side={THREE.DoubleSide}
-            alphaTest={0.05}
-          />
-        </mesh>
-      )}
+    <group ref={rootGroupRef} position={[0, -1.2, -13]} scale={[1.4, 1.4, 1.4]}>
+      {/* 1. Real Rigged 3D Character Mesh */}
+      <primitive object={scene} />
 
-      {/* 2. Cybernetic Pedestal / Holographic Platform */}
-      <group ref={pedestalRef} position={[0, -0.05, 0]}>
-        {/* Core Ring */}
+      {/* 2. Cybernetic Pedestal / Holographic Base */}
+      <group ref={pedestalRef} position={[0, 0.02, 0]}>
         <mesh rotation={[-Math.PI / 2, 0, 0]}>
-          <cylinderGeometry args={[1.2, 1.3, 0.1, 32]} />
+          <cylinderGeometry args={[0.9, 1.0, 0.06, 32]} />
           <meshStandardMaterial
-            color="#0369a1"
+            color="#0284c7"
             emissive="#0284c7"
-            emissiveIntensity={0.5}
+            emissiveIntensity={0.6}
             roughness={0.2}
             metalness={0.8}
           />
         </mesh>
-
-        {/* Outer Glowing Neon Ring */}
-        <mesh position={[0, 0.06, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <ringGeometry args={[1.2, 1.35, 32]} />
+        <mesh position={[0, 0.04, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <ringGeometry args={[0.85, 0.98, 32]} />
           <meshBasicMaterial color="#38bdf8" />
         </mesh>
-
-        {/* Inner Gold Accents */}
-        <mesh position={[0, 0.07, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <ringGeometry args={[0.6, 0.7, 16]} />
+        <mesh position={[0, 0.05, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <ringGeometry args={[0.45, 0.55, 16]} />
           <meshBasicMaterial color="#f59e0b" />
         </mesh>
       </group>
 
-      {/* 3. Ambient Floor Shadow Glow */}
-      <mesh position={[0, -0.15, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[0.2, 1.8, 32]} />
-        <meshBasicMaterial color="#0284c7" transparent opacity={0.3} />
+      {/* 3. Shadow Light Glow */}
+      <mesh position={[0, -0.05, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[0.2, 1.4, 32]} />
+        <meshBasicMaterial color="#0284c7" transparent opacity={0.35} />
       </mesh>
     </group>
   );
 }
+
+useGLTF.preload('/models/Soldier.glb');

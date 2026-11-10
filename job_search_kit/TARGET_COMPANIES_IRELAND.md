@@ -61,3 +61,4 @@ This guide lists the premier Irish employers and recruitment platforms where **M
 5. **Step 5: Apply & Track**
    - Send 3 to 5 targeted, high-quality applications every single morning.
    - Quality and personalization beat spamming 100 random companies every time.
+

@@ -9,3 +9,4 @@ echo [DONE] Draft created: job_search_kit\sample_application_draft.eml
 echo Double-click that file to open in your Email app!
 echo ========================================================
 pause
+
