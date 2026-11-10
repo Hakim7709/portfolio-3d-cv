@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { CANDIDATE_DATA } from '@/data/candidate';
-import { Layers, ExternalLink, Zap } from 'lucide-react';
-import { GithubIcon } from '@/components/icons/BrandIcons';
+import { Layers, ExternalLink, Zap, CheckCircle2 } from 'lucide-react';
 
 export function ProjectsStage() {
   return (
@@ -65,23 +64,18 @@ export function ProjectsStage() {
 
                 {/* Card Actions */}
                 <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs font-semibold">
-                  <a
-                    href={project.githubUrl || CANDIDATE_DATA.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition"
-                  >
-                    <GithubIcon className="w-4 h-4 text-slate-400" />
-                    Source Repository
-                  </a>
+                  <span className="inline-flex items-center gap-1.5 text-emerald-400">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Verified Architecture
+                  </span>
 
                   <a
-                    href={project.githubUrl || CANDIDATE_DATA.githubUrl}
+                    href={CANDIDATE_DATA.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition"
                   >
-                    View System <ExternalLink className="w-3.5 h-3.5" />
+                    Request Live Demo <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>

@@ -14,8 +14,9 @@ describe('Floating Dock Action Integrity', () => {
     expect(CANDIDATE_DATA.email).toBe('mdhakimmia.me@gmail.com');
   });
 
-  it('has valid GitHub profile URL', () => {
-    expect(CANDIDATE_DATA.githubUrl).toBe('https://github.com/Hakim7709');
+  it('has verified Facebook profile link and no GitHub link', () => {
+    expect(CANDIDATE_DATA.facebookUrl).toBe('https://facebook.com');
+    expect(CANDIDATE_DATA.githubUrl).toBeUndefined();
   });
 });
 

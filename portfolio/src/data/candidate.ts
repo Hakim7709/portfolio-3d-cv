@@ -28,7 +28,7 @@ export interface CandidateData {
   email: string;
   whatsappUrl: string;
   callUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
   facebookUrl: string;
   summary: string;
   experience: ExperienceItem[];
@@ -57,7 +57,6 @@ export const CANDIDATE_DATA: CandidateData = {
   email: "mdhakimmia.me@gmail.com",
   whatsappUrl: "https://wa.me/966570457976",
   callUrl: "tel:+966570457976",
-  githubUrl: "https://github.com/Hakim7709",
   facebookUrl: "https://facebook.com",
   summary: "Dynamic, results-driven operations leader with 6+ years of front-line management, crew coaching, supplier ordering, and strict HACCP compliance at Albaik (Saudi Arabia)—the gold standard in fast-casual volume and food quality. Expert in daily vendor purchase orders, cold-chain receipt verification, inventory par-levels, and waste reduction. Master user of modern Generative AI tooling, prompt engineering, and autonomous agents, combined with proven production expertise in building full-stack web applications, Python automation bots, and WhatsApp Business API pipelines. Actively seeking sponsored employment in Ireland or Europe.",
   experience: [
@@ -116,32 +115,28 @@ export const CANDIDATE_DATA: CandidateData = {
       subtitle: "Automated Daily Restaurant Compliance Bot",
       description: "Custom Python automation engine utilizing Playwright and REST micro-tasks to verify restaurant parameters (fryer oil, CCP logs, temperatures, facility hygiene) and submit daily compliance records directly to management portals.",
       tags: ["Python", "Playwright", "Automation", "HACCP"],
-      metrics: "Saves 45 mins/day; 100% error-free compliance",
-      githubUrl: "https://github.com/Hakim7709"
+      metrics: "Saves 45 mins/day; 100% error-free compliance"
     },
     {
       title: "Cloud WhatsApp Automated Billing & Notification Engine",
       subtitle: "High-Throughput Webhook Messaging Service",
       description: "Distributed Node.js backend integrating official WhatsApp Business API to deliver instant transactional invoices, real-time status alerts, and multi-tenant customer notifications with zero downtime.",
       tags: ["Node.js", "WhatsApp API", "REST API", "PostgreSQL"],
-      metrics: "Sub-second delivery; handles thousands of monthly alerts",
-      githubUrl: "https://github.com/Hakim7709"
+      metrics: "Sub-second delivery; handles thousands of monthly alerts"
     },
     {
       title: "Smart Khatiyan & Citizen Land Records Extraction Suite",
       subtitle: "AI Vision & Document Verification Platform",
       description: "High-accuracy multimodal extraction tool that parses intricate governmental land records (Khatiyan, Porcha, Dalil) and delivers instant legal audit reports matching standard Form 5463.",
       tags: ["Next.js", "Python", "AI Vision", "Tailwind CSS"],
-      metrics: "99.4% OCR precision on historical records",
-      githubUrl: "https://github.com/Hakim7709"
+      metrics: "99.4% OCR precision on historical records"
     },
     {
       title: "Enterprise Multi-Router Centralized Dashboard",
       subtitle: "Remote Network Infrastructure Manager",
       description: "Centralized monitoring system connecting multiple remote branch routers through encrypted Cloudflare tunnels with live client bandwidth telemetry, remote reboot, and uptime tracking.",
       tags: ["Python", "WebSocket", "Cloudflare Tunnels", "Linux"],
-      metrics: "Live monitoring across branch networks",
-      githubUrl: "https://github.com/Hakim7709"
+      metrics: "Live monitoring across branch networks"
     }
   ],
   careerTarget: {

@@ -39,7 +39,6 @@ Sincerely,
 Restaurant Assistant Coach | Full-Stack Developer
 WhatsApp / Phone: {CANDIDATE_PHONE}
 Email: {CANDIDATE_EMAIL}
-GitHub: https://github.com/Hakim7709
 """
     msg.attach(MIMEText(formatted_body, 'plain'))
 

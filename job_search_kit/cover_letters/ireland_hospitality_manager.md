@@ -2,7 +2,7 @@
 
 **Candidate:** Md Hakim Mia  
 **Location:** Riyadh, Saudi Arabia (Immediate Relocation to Ireland / Ready for Sponsorship)  
-**Contact:** +966 57 045 7976 | mdhakimmia.me@gmail.com | [Portfolio & Live 3D CV](https://hakim7709.github.io)  
+**Contact:** +966 57 045 7976 | mdhakimmia.me@gmail.com  
 **Target Roles:** Restaurant Assistant Manager / Shift Supervisor / Fast-Casual Operations Coach  
 **Eligibility:** Eligible for Ireland General Employment Permit (Hospitality Management Track)  
 

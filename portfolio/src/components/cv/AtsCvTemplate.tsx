@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import { CANDIDATE_DATA } from '@/data/candidate';
 import { Phone, Mail, MapPin, Globe, Printer, ArrowLeft, Download, ShieldCheck, CheckCircle } from 'lucide-react';
-import { GithubIcon } from '@/components/icons/BrandIcons';
 import Link from 'next/link';
 
 export function AtsCvTemplate() {
@@ -63,10 +62,6 @@ export function AtsCvTemplate() {
               <span className="flex items-center gap-1">
                 <Mail className="w-3.5 h-3.5 text-slate-500" />
                 <a href={`mailto:${CANDIDATE_DATA.email}`} className="hover:text-sky-700">{CANDIDATE_DATA.email}</a>
-              </span>
-              <span className="flex items-center gap-1">
-                <GithubIcon className="w-3.5 h-3.5 text-slate-500" />
-                <a href={CANDIDATE_DATA.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-sky-700">github.com/Hakim7709</a>
               </span>
             </div>
           </div>
@@ -232,7 +227,7 @@ export function AtsCvTemplate() {
         {/* Footer Note */}
         <footer className="mt-6 pt-4 border-t border-slate-100 text-[10px] text-slate-400 text-center flex items-center justify-between">
           <span>Md Hakim Mia • Official ATS CV</span>
-          <span>Verified Reference & Portfolio: https://hakim7709.github.io</span>
+          <span>Verified Reference & Credentials Available Upon Request</span>
         </footer>
       </article>
     </div>

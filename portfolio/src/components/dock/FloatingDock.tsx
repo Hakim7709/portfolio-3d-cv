@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { CANDIDATE_DATA } from '@/data/candidate';
 import { MessageCircle, Phone, Mail, FileText, Globe, Sparkles } from 'lucide-react';
-import { GithubIcon, FacebookIcon } from '@/components/icons/BrandIcons';
+import { FacebookIcon } from '@/components/icons/BrandIcons';
 
 export function FloatingDock() {
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
@@ -42,14 +42,6 @@ export function FloatingDock() {
       href: '/cv',
       external: false,
       color: 'text-amber-300 hover:text-amber-200 bg-amber-500/10 border-amber-500/30'
-    },
-    {
-      id: 'github',
-      label: 'GitHub Repositories',
-      icon: GithubIcon,
-      href: CANDIDATE_DATA.githubUrl,
-      external: true,
-      color: 'hover:text-white hover:bg-white/10 hover:border-white/30'
     },
     {
       id: 'facebook',

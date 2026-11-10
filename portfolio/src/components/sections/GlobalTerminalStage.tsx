@@ -3,7 +3,7 @@
 import React from 'react';
 import { CANDIDATE_DATA } from '@/data/candidate';
 import { PlaneTakeoff, MessageCircle, Phone, Mail, FileText, Globe, CheckCircle2, ArrowRight } from 'lucide-react';
-import { GithubIcon, FacebookIcon } from '@/components/icons/BrandIcons';
+import { FacebookIcon } from '@/components/icons/BrandIcons';
 
 export function GlobalTerminalStage() {
   return (
@@ -92,9 +92,6 @@ export function GlobalTerminalStage() {
 
         {/* Social Links */}
         <div className="flex items-center justify-center gap-6 text-sm text-slate-400">
-          <a href={CANDIDATE_DATA.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition flex items-center gap-1.5">
-            <GithubIcon className="w-4 h-4" /> GitHub
-          </a>
           <a href={CANDIDATE_DATA.facebookUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition flex items-center gap-1.5">
             <FacebookIcon className="w-4 h-4 text-blue-400" /> Facebook
           </a>

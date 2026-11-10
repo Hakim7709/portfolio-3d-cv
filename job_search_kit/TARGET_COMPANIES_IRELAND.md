@@ -57,7 +57,7 @@ This guide lists the premier Irish employers and recruitment platforms where **M
    - Insert the company name and hiring manager's name.
 4. **Step 4: Attach Your Official ATS CV**
    - Use the high-resolution PDF generated from `http://localhost:3000/cv`.
-   - Mention your portfolio link: `https://hakim7709.github.io` (or your Vercel link).
+   - Mention your portfolio link or attach your ATS CV directly.
 5. **Step 5: Apply & Track**
    - Send 3 to 5 targeted, high-quality applications every single morning.
    - Quality and personalization beat spamming 100 random companies every time.

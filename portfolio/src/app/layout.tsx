@@ -3,7 +3,7 @@ import './globals.css';
 import { CANDIDATE_DATA } from '@/data/candidate';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hakim7709.github.io'),
+  metadataBase: new URL('https://mdhakimmia.me'),
   title: `${CANDIDATE_DATA.name} | 3D Interactive Portfolio & CV`,
   description: `${CANDIDATE_DATA.title} - 6+ Years Albaik Operations Leadership paired with Full-Stack Web Development & Python Automation. Targeting Ireland and Europe relocation.`,
   keywords: [

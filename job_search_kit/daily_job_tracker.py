@@ -22,7 +22,7 @@ from irish_job_matcher import analyze_job_posting
 CANDIDATE_NAME = "Md Hakim Mia"
 CANDIDATE_PHONE = "+966570457976"
 CANDIDATE_EMAIL = "mdhakimmia.me@gmail.com"
-PORTFOLIO_URL = "https://hakim7709.github.io/portfolio-3d-cv"
+PORTFOLIO_URL = "http://localhost:3000"
 
 # Curated high-yield Irish search targets
 TARGET_SEARCHES = [
@@ -224,3 +224,4 @@ def generate_daily_html_report(output_path: str = "daily_irish_jobs_report.html"
 
 if __name__ == "__main__":
     generate_daily_html_report()
+

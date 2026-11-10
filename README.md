@@ -3,7 +3,7 @@
 **Candidate:** Md Hakim Mia  
 **Current Role:** Restaurant Assistant Coach (6 Years at Albaik, Saudi Arabia)  
 **Technical Skills:** Full-Stack Web Development, Python Automation, WhatsApp Cloud API  
-**Contact:** +966 57 045 7976 (WhatsApp & Call) | mdhakimmia.me@gmail.com | [GitHub: Hakim7709](https://github.com/Hakim7709)  
+**Contact:** +966 57 045 7976 (WhatsApp & Call) | mdhakimmia.me@gmail.com  
 **Target Market:** Ireland & Europe (Work Visa Sponsorship / General & Critical Skills Permits)  
 
 ---
@@ -18,7 +18,7 @@
   3. **IT & Full-Stack Automation Lab:** React/Next.js, Python Playwright scripts, WhatsApp API, database architectures.
   4. **Featured Production Systems:** Albaik Paperless automation bot, WhatsApp billing engine, Khatiyan extraction suite, Multi-router dashboard.
   5. **International Relocation Terminal:** Ireland & European sponsorship readiness and contact matrix.
-- **Always-On Floating Action Dock:** Fixed bottom dock with instant links for **WhatsApp** (`+966570457976`), **Direct Call**, **Email**, **Facebook**, **GitHub**, and **1-Click ATS CV Download**.
+- **Always-On Floating Action Dock:** Fixed bottom dock with instant links for **WhatsApp** (`+966570457976`), **Direct Call**, **Email**, **Facebook**, and **1-Click ATS CV Download**.
 
 ### 2. 📄 Ireland & European Standard ATS CV (`portfolio/src/app/cv`)
 - **Web ATS CV:** Accessible at `http://localhost:3000/cv`.

@@ -2,7 +2,7 @@
 
 **Candidate:** Md Hakim Mia  
 **Location:** Riyadh, Saudi Arabia (Targeting Ireland & Europe Relocation / Sponsorship)  
-**Contact:** +966 57 045 7976 | mdhakimmia.me@gmail.com | [GitHub: Hakim7709](https://github.com/Hakim7709)  
+**Contact:** +966 57 045 7976 | mdhakimmia.me@gmail.com  
 **Target Roles:** IT Support Specialist / Systems Coordinator / Junior Full-Stack Developer  
 
 ---
@@ -28,5 +28,4 @@ Sincerely,
 Full-Stack Developer & Systems Integrator  
 WhatsApp / Mobile: +966 57 045 7976  
 Email: mdhakimmia.me@gmail.com  
-GitHub: https://github.com/Hakim7709  
 
