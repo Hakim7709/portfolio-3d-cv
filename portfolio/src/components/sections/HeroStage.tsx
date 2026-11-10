@@ -107,12 +107,12 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
             </a>
           </div>
 
-          {/* 3D Walk Indicator / Scroll Prompt */}
+          {/* Scroll Prompt */}
           <button
             onClick={onScrollToNext}
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-slate-400 hover:text-cyan-400 transition cursor-pointer group"
           >
-            <span className="group-hover:translate-x-0.5 transition">Scroll down to walk through journey</span>
+            <span className="group-hover:translate-x-0.5 transition">Scroll down to explore journey</span>
             <ArrowDown className="w-4 h-4 animate-bounce text-cyan-400" />
           </button>
         </div>

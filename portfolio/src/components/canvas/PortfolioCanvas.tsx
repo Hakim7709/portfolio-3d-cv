@@ -2,7 +2,6 @@
 
 import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { WalkingCharacter } from './WalkingCharacter';
 import { StageScene } from './StageScene';
 
 interface PortfolioCanvasProps {
@@ -74,7 +73,6 @@ export function PortfolioCanvas({ scrollProgress }: PortfolioCanvasProps) {
 
         <Suspense fallback={null}>
           <StageScene />
-          <WalkingCharacter scrollProgress={scrollProgress} />
         </Suspense>
       </Canvas>
 

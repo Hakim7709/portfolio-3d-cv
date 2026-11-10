@@ -10,7 +10,7 @@ import { ProjectsStage } from '@/components/sections/ProjectsStage';
 import { GlobalTerminalStage } from '@/components/sections/GlobalTerminalStage';
 import { FloatingDock } from '@/components/dock/FloatingDock';
 import { CANDIDATE_DATA } from '@/data/candidate';
-import { Footprints, FileText } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import Link from 'next/link';
 
 // Dynamically import Three.js Canvas to guarantee zero SSR hydration issues
@@ -139,13 +139,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 5. Live 3D Walk Status Tracker (Float Pill) */}
-      <div className="fixed top-18 right-4 z-30 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-white/10 backdrop-blur-md text-[11px] text-slate-300 font-mono">
-        <Footprints className="w-3.5 h-3.5 text-cyan-400 animate-bounce" />
-        <span>3D Walk: {Math.round(scrollProgress * 100)}% Journey</span>
-      </div>
-
-      {/* 6. Scrollable 5-Waypoint Content Layers */}
+      {/* 5. Scrollable 5-Waypoint Content Layers */}
       <div className="relative z-10">
         <HeroStage onScrollToNext={() => scrollToSection('albaik')} />
         <AlbaikStage />
