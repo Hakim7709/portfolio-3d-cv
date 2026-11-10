@@ -19,7 +19,7 @@ export function WalkingCharacter({ scrollProgress }: WalkingCharacterProps) {
 
   useEffect(() => {
     const loader = new THREE.TextureLoader();
-    loader.load('/images/avatar_3d_blend.png', (loadedTex) => {
+    loader.load('/images/avatar_3d_blend_v3.png', (loadedTex) => {
       loadedTex.colorSpace = THREE.SRGBColorSpace;
       setTexture(loadedTex);
     });

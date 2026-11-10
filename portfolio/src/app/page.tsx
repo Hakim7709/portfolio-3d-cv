@@ -53,10 +53,10 @@ export default function Home() {
           }}
         >
           <Image
-            src="/images/cyber_runway_bg.jpg"
+            src="/images/cyber_runway_bg_v3.jpg"
             alt="Cinematic 3D Cybernetic Environment"
             fill
-            className="object-cover object-center opacity-45"
+            className="object-cover object-center opacity-50"
             priority
           />
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
         >
           <div className="relative w-full h-full max-w-3xl max-h-[80vh]">
             <Image
-              src="/images/avatar_3d_blend.png"
+              src="/images/avatar_3d_blend_v3.png"
               alt="3D Avatar Hologram"
               fill
               className="object-contain filter drop-shadow-[0_0_80px_rgba(6,182,212,0.4)]"

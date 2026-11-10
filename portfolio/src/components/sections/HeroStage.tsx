@@ -20,7 +20,7 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
           <div className="relative mb-5 flex items-center gap-4">
             <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-cyan-400/60 shadow-xl shadow-cyan-500/20 bg-slate-900">
               <Image
-                src="/images/hakim_executive.jpg"
+                src="/images/hakim_executive_v3.jpg"
                 alt={CANDIDATE_DATA.name}
                 fill
                 className="object-cover object-top scale-105"
@@ -127,7 +127,7 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
             {/* 3D Character Main Display */}
             <div className="relative w-full h-[430px] rounded-2xl overflow-hidden bg-slate-950/80 border border-white/10">
               <Image
-                src="/images/avatar_3d_hd.jpg"
+                src="/images/avatar_3d_hd_v3.jpg"
                 alt="Full HD 3D Avatar Md Hakim Mia"
                 fill
                 className="object-cover object-top scale-100 group-hover:scale-105 transition duration-700 ease-out"
@@ -155,7 +155,7 @@ export function HeroStage({ onScrollToNext }: HeroStageProps) {
                 {/* Verified Executive Portrait Thumbnail */}
                 <div className="relative w-11 h-13 rounded-lg overflow-hidden border border-white/30 shadow-md" title="Official Executive Photo Verified">
                   <Image
-                    src="/images/hakim_executive.jpg"
+                    src="/images/hakim_executive_v3.jpg"
                     alt="Official Executive Photo"
                     fill
                     className="object-cover object-top"
